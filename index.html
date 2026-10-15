@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rizqi Alif Permana Putra - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-   
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -29,7 +26,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <nav class="pill-nav-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+    <nav class="pill-nav-container">
         <div class="pill-nav-surface">
             <ul class="pill-nav-list">
                 <li><a href="#home" class="pill-nav-item active">Home</a></li>
@@ -144,8 +141,7 @@
         <div class="container org-container">
             <div class="org-left" data-aos="fade-right" data-aos-duration="1200">
                 <div class="infinite-spiral" id="spiral-container">
-                    <div class="infinite-spiral__stage" id="spiral-stage">
-                    </div>
+                    <div class="infinite-spiral__stage" id="spiral-stage"></div>
                 </div>
             </div>
             
@@ -180,19 +176,15 @@
         <h3 class="section-title center" data-aos="fade-up">Certifications</h3>
         
         <div class="card-swap" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-swap-stage" id="cert-stage">
-                <!-- Data sertifikat akan di-generate otomatis oleh JavaScript di bawah -->
-            </div>
+            <div class="card-swap-stage" id="cert-stage"></div>
         </div>
     </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-
-            AOS.init({ once: false, offset: 100 });
+            AOS.init({ once: false, offset: 50 });
 
             const heroSvg = document.querySelector('.stroke-text-svg');
             if (heroSvg) {
@@ -207,10 +199,9 @@
                 });
             }
 
-
             const sections = document.querySelectorAll("section.page");
             const navItems = document.querySelectorAll(".pill-nav-item");
-            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.5 };
+            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.3 };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -223,6 +214,17 @@
             }, observerOptions);
             sections.forEach(section => observer.observe(section));
 
+            const pillNav = document.querySelector('.pill-nav-container');
+            const heroSection = document.getElementById('home');
+            if (pillNav && heroSection) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > heroSection.offsetHeight / 2) {
+                        pillNav.classList.add('show');
+                    } else {
+                        pillNav.classList.remove('show');
+                    }
+                });
+            }
 
             const images = [
                 "assets/org1.jpg", "assets/org2.jpg", "assets/org3.jpg", "assets/org4.jpg",
@@ -247,8 +249,10 @@
                 const count = cards.length, half = count / 2, radius = 170, verticalSpacing = 80, perspective = 1000, turnSize = 7;
                 
                 const spiralContainer = document.getElementById("spiral-container");
-                spiralContainer.addEventListener("mouseenter", () => isHovered = true);
-                spiralContainer.addEventListener("mouseleave", () => isHovered = false);
+                if(spiralContainer) {
+                    spiralContainer.addEventListener("mouseenter", () => isHovered = true);
+                    spiralContainer.addEventListener("mouseleave", () => isHovered = false);
+                }
 
                 function renderSpiral(time) {
                     const delta = Math.min((time - previousTime) / 1000, 0.05);
@@ -277,7 +281,6 @@
                 }
                 requestAnimationFrame(renderSpiral);
             }
-
 
             const certs = [
                 { title: "Google AI Certification", src: "assets/cert1.jpg", icon: "fa-google" },
@@ -320,8 +323,8 @@
                             card.style.zIndex = '10';
                             card.style.pointerEvents = 'auto';
                         } else {
-                            let x = offset * 80, y = -offset * 40, scale = 1 - (offset * 0.05);
-                            card.style.transform = `translate3d(${x}px, ${y}px, -${offset * 100}px) scale(${scale})`;
+                            let x = offset * 60, y = -offset * 30, scale = 1 - (offset * 0.05);
+                            card.style.transform = `translate3d(${x}px, ${y}px, -${offset * 80}px) scale(${scale})`;
                             card.style.opacity = (1 - offset * 0.12).toString();
                             card.style.zIndex = (10 - offset).toString();
                             card.style.pointerEvents = 'none';
@@ -341,42 +344,15 @@
                     });
                 });
                 renderCerts();
-
+            }
 
             const audio = document.getElementById('bg-audio');
             const musicBtn = document.getElementById('music-toggle-btn');
 
             if (audio && musicBtn) {
-
-                audio.volume = 0.4;
-
+                audio.volume = 0.8; 
                 let isPlaying = false;
 
-                // Fungsi untuk memutar musik
-                const playMusic = () => {
-                    audio.play().then(() => {
-                        isPlaying = true;
-                        musicBtn.classList.add('playing');
-                    }).catch(err => {
-
-                        console.log("Autoplay dicegah oleh browser, menunggu interaksi klik pertama.");
-                    });
-                };
-
-                
-                playMusic();
-
-                const handleFirstInteraction = () => {
-                    if (!isPlaying) {
-                        playMusic();
-                    }
-                    window.removeEventListener('click', handleFirstInteraction);
-                    window.removeEventListener('scroll', handleFirstInteraction);
-                };
-                window.addEventListener('click', handleFirstInteraction);
-                window.addEventListener('scroll', handleFirstInteraction);
-
-                
                 musicBtn.addEventListener('click', (e) => {
                     e.stopPropagation(); 
                     if (isPlaying) {
@@ -385,13 +361,15 @@
                         musicBtn.classList.remove('playing');
                         musicBtn.classList.add('muted');
                     } else {
-                        audio.play();
-                        isPlaying = true;
-                        musicBtn.classList.remove('muted');
-                        musicBtn.classList.add('playing');
+                        audio.play().then(() => {
+                            isPlaying = true;
+                            musicBtn.classList.remove('muted');
+                            musicBtn.classList.add('playing');
+                        }).catch(err => {
+                            console.log("Audio play error:", err);
+                        });
                     }
                 });
-            }
             }
         });
     </script>
