@@ -694,35 +694,64 @@ h1, h2, h3, .name-logo {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
     .pill-nav-container {
         display: none !important;
     }
 
-    .top-header { padding: 15px 5%; }
-    .name-logo, .year-logo { font-size: 0.85rem; }
+    .top-header { 
+        padding: 15px 5%; 
+        width: 100%;
+    }
+    
+    .name-logo, .year-logo { 
+        font-size: 0.85rem; 
+    }
     
     .page {
         padding: 90px 15px 70px 15px;
         min-height: 100vh;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .hero-page {
         justify-content: center;
         padding-top: 0;
+        width: 100%;
+    }
+
+    .stroke-text-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
     }
 
     .stroke-text-svg {
-        font-size: 16vw !important;
-        letter-spacing: 2px;
+        font-size: 15vw !important;
+        letter-spacing: 1px;
+        max-width: 100%;
     }
 
     .scroll-indicator {
         bottom: 80px;
     }
 
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
     .about-container, .work-container, .project-container, .org-container { 
         flex-direction: column; 
         gap: 25px;
+        width: 100%;
     }
 
     .org-container {
@@ -731,6 +760,7 @@ h1, h2, h3, .name-logo {
 
     .infinite-spiral {
         min-height: 350px;
+        max-width: 100%;
     }
 
     .infinite-spiral__item {
@@ -739,10 +769,11 @@ h1, h2, h3, .name-logo {
     }
 
     .card-swap {
-        --swap-w: 290px;
-        --swap-h: 210px;
-        min-height: 320px;
+        --swap-w: 280px;
+        --swap-h: 200px;
+        min-height: 300px;
         margin-top: 20px;
+        max-width: 100%;
     }
 
     .section-title {
@@ -752,8 +783,8 @@ h1, h2, h3, .name-logo {
 
 @media (max-width: 400px) {
     .stroke-text-svg {
-        font-size: 30vw !important;
-        letter-spacing: 2px;
+        font-size: 14vw !important;
+        letter-spacing: 1px;
     }
     
     .scroll-indicator {
@@ -761,7 +792,7 @@ h1, h2, h3, .name-logo {
     }
     
     .card-swap {
-        --swap-w: 260px;
-        --swap-h: 190px;
+        --swap-w: 250px;
+        --swap-h: 180px;
     }
 }
