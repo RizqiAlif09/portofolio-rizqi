@@ -85,9 +85,13 @@
                         <div class="skills-icons">
                             <span><i class="fa-brands fa-python"></i> Python</span>
                             <span><i class="fa-solid fa-chart-simple"></i> Power BI</span>
-                            <span><i class="fa-brands fa-windows"></i> Microsoft</span>
-                            <span><i class="fa-solid fa-pen-nib"></i> Canva</span>
-                            <span><i class="fa-solid fa-video"></i> Capcut</span>
+                            <span><i class="fa-brands fa-react"></i> React.js</span>
+                            <span><i class="fa-solid fa-database"></i> SQL / MySQL</span>
+                            <span><i class="fa-solid fa-server"></i> MongoDB</span>
+                            <span><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                            <span><i class="fa-solid fa-chart-pie"></i> Data Analysis</span>
+                            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
                             <span><i class="fa-brands fa-figma"></i> Figma</span>
                             <span><i class="fa-solid fa-code"></i> VSCode</span>
                         </div>
@@ -350,8 +354,33 @@
             const musicBtn = document.getElementById('music-toggle-btn');
 
             if (audio && musicBtn) {
-                audio.volume = 0.8; 
+                audio.volume = 1.0; 
                 let isPlaying = false;
+
+                const playAudio = () => {
+                    audio.play().then(() => {
+                        isPlaying = true;
+                        musicBtn.classList.remove('muted');
+                        musicBtn.classList.add('playing');
+                    }).catch(err => {
+                        console.log("Autoplay blocked, waiting for interaction");
+                    });
+                };
+
+                playAudio();
+
+                const unlockAudio = () => {
+                    if (!isPlaying) {
+                        playAudio();
+                    }
+                    window.removeEventListener('click', unlockAudio);
+                    window.removeEventListener('scroll', unlockAudio);
+                    window.removeEventListener('touchstart', unlockAudio);
+                };
+
+                window.addEventListener('click', unlockAudio);
+                window.addEventListener('scroll', unlockAudio);
+                window.addEventListener('touchstart', unlockAudio);
 
                 musicBtn.addEventListener('click', (e) => {
                     e.stopPropagation(); 
