@@ -57,6 +57,10 @@ h1, h2, h3, .name-logo {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(rgba(5, 5, 5, 0.4), rgba(5, 5, 5, 0.85) 85%, #050505), url('assets/pemandangan-gunung.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .stroke-text-wrapper {
@@ -83,7 +87,7 @@ h1, h2, h3, .name-logo {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     fill: transparent;
-    stroke: #02245c; 
+    stroke: #021d38; 
     stroke-width: 2.5px;
     stroke-dasharray: 1500;
     stroke-dashoffset: 1500;
@@ -512,6 +516,7 @@ h1, h2, h3, .name-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .card-swap {

@@ -16,9 +16,9 @@
             <button id="music-toggle-btn" class="music-btn" aria-label="Toggle Music" title="Play/Pause Background Music">
                 <i class="fa-solid fa-music"></i>
             </button>
-            <div class="name-logo">Rizqi Alif Permana Putra</div>
+            <div class="name-logo">Rizqi Alif.</div>
         </div>
-        <div class="year-logo">2026</div>
+        <div class="year-logo">@2026.</div>
     </header>
 
     <audio id="bg-audio" loop>
@@ -294,11 +294,11 @@
 
             const certs = [
                 { title: "Google AI Certification", src: "assets/cert1.jpg", icon: "fa-google" },
-                { title: "MSIB AI 4 Jobs", src: "assets/cert2.jpg", icon: "fa-robot" },
-                { title: "Python Cert", src: "assets/cert3.jpg", icon: "fa-python" },
-                { title: "Dicoding SQL Cert", src: "assets/cert4.jpg", icon: "fa-database" },
-                { title: "Dicoding Belajar Dasar AI", src: "assets/cert5.jpg", icon: "fa-brain" },
-                { title: "Dicoding Visualisasi Data", src: "assets/cert6.jpg", icon: "fa-chart-pie" }
+                { title: "MSIB Batch 7 Certification", src: "assets/cert2.jpg", icon: "fa-robot" },
+                { title: "Python Certification", src: "assets/cert3.jpg", icon: "fa-python" },
+                { title: "Dicoding SQL Certification", src: "assets/cert4.jpg", icon: "fa-database" },
+                { title: "Dicoding AI Fundamentals Certification", src: "assets/cert5.jpg", icon: "fa-brain" },
+                { title: "Dicoding Data Visualization Certification", src: "assets/cert6.jpg", icon: "fa-chart-pie" }
             ];
             const certStage = document.getElementById("cert-stage");
             if (certStage) {
@@ -360,7 +360,7 @@
             const musicBtn = document.getElementById('music-toggle-btn');
 
             if (audio && musicBtn) {
-                audio.volume = 2; 
+                audio.volume = 1; 
                 let isPlaying = false;
 
                 const playAudio = () => {
