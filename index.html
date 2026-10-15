@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizqi Alif Permana Putra - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+   
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-header" data-aos="fade-down" data-aos-duration="1200">
+        <div class="header-left">
+            <button id="music-toggle-btn" class="music-btn" aria-label="Toggle Music" title="Play/Pause Background Music">
+                <i class="fa-solid fa-music"></i>
+            </button>
+            <div class="name-logo">Rizqi Alif Permana Putra</div>
+        </div>
+        <div class="year-logo">2026</div>
+    </header>
+
+    <audio id="bg-audio" loop>
+        <source src="assets/backsound.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <nav class="pill-nav-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+        <div class="pill-nav-surface">
+            <ul class="pill-nav-list">
+                <li><a href="#home" class="pill-nav-item active">Home</a></li>
+                <li><a href="#about" class="pill-nav-item">About</a></li>
+                <li><a href="#experience" class="pill-nav-item">Experience</a></li>
+                <li><a href="#organization" class="pill-nav-item">Organization</a></li>
+                <li><a href="#project" class="pill-nav-item">Project</a></li>
+                <li><a href="#certifications" class="pill-nav-item">Certifications</a></li>
+            </ul>
+            <span class="pill-nav-rim"></span>
+        </div>
+    </nav>
+
+    <section class="page hero-page" id="home">
+        <div class="stroke-text-wrapper">
+            <svg class="stroke-text-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
+                <text class="stroke-text-fill" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">PORTOFOLIO</text>
+                <text class="stroke-text-stroke" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">PORTOFOLIO</text>
+            </svg>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fa-solid fa-angles-down"></i>
+        </div>
+    </section>
+
+    <section class="page about-page" id="about">
+        <div class="container about-container">
+            <div class="about-left" data-aos="fade-right" data-aos-duration="1200">
+                <div class="hello-text">
+                    <p>Hello, I am</p>
+                    <h2>Rizqi Alif Permana Putra</h2>
+                </div>
+                <div class="photo-wrapper">
+                    <div class="blue-bg"></div>
+                    <img src="assets/foto-profil.jpg" alt="Rizqi Alif" class="profile-img">
+                </div>
+            </div>
+            
+            <div class="about-right" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <h3 class="section-title">About Me</h3>
+                <p class="description">
+                    A Bachelor of Informatics Engineering graduate from Universitas Mercu Buana, specializing in Data Science & Data Analytics, with a practical track record in administrative data management. Technical capabilities in artificial intelligence and information processing are validated by the completion of the MSIB Batch 7 AI 4 Jobs program and a Google AI Professional Certification. Analytical instruments include Python, Power BI, Spreadsheets, SQL, and PivotTables. All logical foundations and computational capabilities are converted into measurable business insights as an objective database to guide strategic decision-making in corporate data analysis departments.
+                </p>
+
+                <div class="edu-skills-row">
+                    <div class="education">
+                        <h4 class="sub-title">Education</h4>
+                        <p class="year">2022 - 2026</p>
+                        <p class="uni">Universitas Mercu Buana, Jakarta</p>
+                    </div>
+                    
+                    <div class="skills">
+                        <h4 class="sub-title">Skills</h4>
+                        <div class="skills-icons">
+                            <span><i class="fa-brands fa-python"></i> Python</span>
+                            <span><i class="fa-solid fa-chart-simple"></i> Power BI</span>
+                            <span><i class="fa-brands fa-windows"></i> Microsoft</span>
+                            <span><i class="fa-solid fa-pen-nib"></i> Canva</span>
+                            <span><i class="fa-solid fa-video"></i> Capcut</span>
+                            <span><i class="fa-brands fa-figma"></i> Figma</span>
+                            <span><i class="fa-solid fa-code"></i> VSCode</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links glass-box" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://www.linkedin.com/in/rizqialifpermanaputra/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="social-links glass-box" data-aos="fade-up" data-aos-delay="400">
+                   <a href="mailto:rizqialif944@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="social-links glass-box" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://wa.me/6283878271681" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <div class="social-links glass-box" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://www.instagram.com/rzqialf/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page work-page" id="experience">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="section-title center">Work Experience</h3>
+            <p class="work-year center">2025 - 2026</p>
+            <p class="work-company center">Lembaga Penelitian dan Pengabdian kepada Masyarakat</p>
+        </div>
+        
+        <div class="container work-container">
+            <div class="work-image" data-aos="fade-right" data-aos-duration="1200">
+                <img src="assets/foto-kantor.jpg" alt="Work Experience with Team">
+            </div>
+            <div class="work-desc" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <p style="margin-bottom: 15px; text-align: justify;">
+                    <strong>Lembaga Penelitian dan Pengabdian kepada Masyarakat (LPPM)</strong> at Universitas Mercu Buana is the central coordinating body responsible for managing, facilitating, and developing academic research and community service programs to implement the Tri Dharma of Higher Education. During my tenure, I contributed to the following key operations:
+                </p>
+                
+                <ul style="margin-left: 20px; text-align: justify; line-height: 1.8;">
+                    <li>Recapitulated 50 proposal documents and activity reports, successfully accelerating administrative data processing by 30%.</li>
+                    <li>Archived 15 documentation videos weekly into a digital database to expand the program's visibility metrics.</li>
+                    <li>Verified hundreds of institutional report entries with 100% accuracy, significantly reducing document submission revision cycles.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="page org-page" id="organization">
+        <h3 class="section-title center" data-aos="fade-up">Organization</h3>
+        
+        <div class="container org-container">
+            <div class="org-left" data-aos="fade-right" data-aos-duration="1200">
+                <div class="infinite-spiral" id="spiral-container">
+                    <div class="infinite-spiral__stage" id="spiral-stage">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="org-right" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <h4 class="sub-title" style="font-size: 1.8rem; margin-bottom: 20px;">Informatics Engineering Student Association</h4>
+                <p style="text-align: justify; line-height: 1.8; color: #cccccc;">
+                    Actively engaged as a Part-time Graphic Designer for the Himpunan Mahasiswa Teknik Informatika (HIMTI) at Universitas Mercu Buana. In this role, I am responsible for conceptualizing and creating visual event branding, social media assets, and promotional campaign materials using design tools such as Canva. This experience has significantly enhanced my creative problem-solving skills, teamwork, and visual communication strategies in managing digital presence for student-led initiatives.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page project-page" id="project">
+        <h3 class="section-title center" data-aos="fade-up">My Project</h3>
+        <div class="container project-container">
+            <div class="project-image" data-aos="zoom-in" data-aos-duration="1200">
+                <a href="https://cengkarengassalamaqiqah.com/" target="_blank">
+                    <img src="assets/foto-project.jpg" alt="Aqiqah Project">
+                    <div class="hover-text">Click to Visit</div>
+                </a>
+            </div>
+            <div class="project-desc" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <h4>Website Katering</h4>
+                <p style="margin-left: 20px; text-align: justify; line-height: 1.8;">
+                    Developed a responsive web platform for a catering and aqiqah business in Cengkareng, built using React.js. The website is specifically designed to establish a strong digital presence, helping local customers easily discover and explore various catering service packages. To provide a seamless and personalized customer experience, the intuitive user interface is optimized to direct all inquiries and orders straight to the business's WhatsApp contact.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page cert-page" id="certifications">
+        <h3 class="section-title center" data-aos="fade-up">Certifications</h3>
+        
+        <div class="card-swap" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-swap-stage" id="cert-stage">
+                <!-- Data sertifikat akan di-generate otomatis oleh JavaScript di bawah -->
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            AOS.init({ once: false, offset: 100 });
+
+            const heroSvg = document.querySelector('.stroke-text-svg');
+            if (heroSvg) {
+                heroSvg.addEventListener('mouseenter', () => {
+                    const stroke = heroSvg.querySelector('.stroke-text-stroke');
+                    const fill = heroSvg.querySelector('.stroke-text-fill');
+                    stroke.style.animation = 'none';
+                    fill.style.animation = 'none';
+                    void stroke.offsetWidth; 
+                    stroke.style.animation = 'drawStroke 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+                    fill.style.animation = 'fillWipe 1.2s cubic-bezier(0.86, 0, 0.07, 1) forwards 1.2s';
+                });
+            }
+
+
+            const sections = document.querySelectorAll("section.page");
+            const navItems = document.querySelectorAll(".pill-nav-item");
+            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.5 };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navItems.forEach(item => item.classList.remove("active"));
+                        const activeItem = document.querySelector(`.pill-nav-item[href="#${entry.target.id}"]`);
+                        if (activeItem) activeItem.classList.add("active");
+                    }
+                });
+            }, observerOptions);
+            sections.forEach(section => observer.observe(section));
+
+
+            const images = [
+                "assets/org1.jpg", "assets/org2.jpg", "assets/org3.jpg", "assets/org4.jpg",
+                "assets/org5.jpg", "assets/org6.jpg", "assets/org7.jpg", "assets/org8.jpg"
+            ];
+            const spiralStage = document.getElementById("spiral-stage");
+            if (spiralStage) {
+                images.forEach((src, index) => {
+                    const card = document.createElement("div");
+                    card.className = "infinite-spiral__item";
+                    const img = document.createElement("img");
+                    img.className = "infinite-spiral__image";
+                    img.src = src;
+                    img.alt = `HIMTI Organization ${index + 1}`;
+                    img.draggable = false;
+                    card.appendChild(img);
+                    spiralStage.appendChild(card);
+                });
+
+                const cards = Array.from(spiralStage.children);
+                let progress = 0, targetProgress = 0, autoSpeed = 0.55, isHovered = false, previousTime = performance.now();
+                const count = cards.length, half = count / 2, radius = 170, verticalSpacing = 80, perspective = 1000, turnSize = 7;
+                
+                const spiralContainer = document.getElementById("spiral-container");
+                spiralContainer.addEventListener("mouseenter", () => isHovered = true);
+                spiralContainer.addEventListener("mouseleave", () => isHovered = false);
+
+                function renderSpiral(time) {
+                    const delta = Math.min((time - previousTime) / 1000, 0.05);
+                    previousTime = time;
+                    const desiredSpeed = isHovered ? 0 : 0.55;
+                    autoSpeed += (desiredSpeed - autoSpeed) * (1 - Math.exp(-delta * 7));
+                    targetProgress += autoSpeed * delta;
+                    progress += (targetProgress - progress) * (1 - Math.exp(-delta * 11));
+
+                    cards.forEach((card, index) => {
+                        let offset = index - progress;
+                        offset = ((offset + half) % count + count) % count - half;
+                        const edge = Math.min(Math.abs(offset) / half, 1);
+                        const opacity = 1 - Math.pow(edge, 2) * (3 - 2 * edge);
+                        const angle = offset * (360 / turnSize);
+                        const angleRad = (angle * Math.PI) / 180;
+                        const x = Math.sin(angleRad) * radius;
+                        const z = Math.cos(angleRad) * radius;
+                        const depthScale = Math.max(0.72, Math.min(1.45, perspective / Math.max(perspective - z, 1)));
+                        const depth = (z / radius + 1) / 2;
+                        card.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${offset * verticalSpacing}px, 0) scale(${depthScale})`;
+                        card.style.opacity = opacity.toFixed(3);
+                        card.style.zIndex = Math.round(depth * 100000) + index;
+                    });
+                    requestAnimationFrame(renderSpiral);
+                }
+                requestAnimationFrame(renderSpiral);
+            }
+
+
+            const certs = [
+                { title: "Google AI Certification", src: "assets/cert1.jpg", icon: "fa-google" },
+                { title: "MSIB AI 4 Jobs", src: "assets/cert2.jpg", icon: "fa-robot" },
+                { title: "Python Cert", src: "assets/cert3.jpg", icon: "fa-python" },
+                { title: "Dicoding SQL Cert", src: "assets/cert4.jpg", icon: "fa-database" },
+                { title: "Dicoding Belajar Dasar AI", src: "assets/cert5.jpg", icon: "fa-brain" },
+                { title: "Dicoding Visualisasi Data", src: "assets/cert6.jpg", icon: "fa-chart-pie" }
+            ];
+            const certStage = document.getElementById("cert-stage");
+            if (certStage) {
+                certs.forEach((cert) => {
+                    const slot = document.createElement("div");
+                    slot.className = "card-swap-slot";
+                    slot.innerHTML = `
+                        <div class="card-swap-card">
+                            <div class="card-swap-item">
+                                <div class="card-swap-head">
+                                    <span class="card-swap-icon"><i class="fa-brands ${cert.icon} fa-solid"></i></span>
+                                    <span class="card-swap-title">${cert.title}</span>
+                                </div>
+                                <div class="card-swap-media"><img src="${cert.src}" alt="${cert.title}" draggable="false"></div>
+                            </div>
+                            <span class="card-swap-card-rim"></span>
+                        </div>
+                        <span class="card-swap-shade"></span>
+                    `;
+                    certStage.appendChild(slot);
+                });
+
+                const swapCards = Array.from(certStage.querySelectorAll('.card-swap-slot'));
+                let currentIndex = 0;
+
+                function renderCerts() {
+                    swapCards.forEach((card, i) => {
+                        let offset = (i - currentIndex + swapCards.length) % swapCards.length;
+                        if (offset === 0) {
+                            card.style.transform = `translate3d(0px, 0px, 0px) scale(1) rotate(0deg)`;
+                            card.style.opacity = '1';
+                            card.style.zIndex = '10';
+                            card.style.pointerEvents = 'auto';
+                        } else {
+                            let x = offset * 80, y = -offset * 40, scale = 1 - (offset * 0.05);
+                            card.style.transform = `translate3d(${x}px, ${y}px, -${offset * 100}px) scale(${scale})`;
+                            card.style.opacity = (1 - offset * 0.12).toString();
+                            card.style.zIndex = (10 - offset).toString();
+                            card.style.pointerEvents = 'none';
+                        }
+                    });
+                }
+                swapCards.forEach((card, i) => {
+                    card.addEventListener('click', () => {
+                        if ((i - currentIndex + swapCards.length) % swapCards.length === 0) {
+                            card.style.transform = `translate3d(-200px, 200px, 0px) scale(0.8) rotate(-15deg)`;
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                currentIndex = (currentIndex + 1) % swapCards.length;
+                                renderCerts();
+                            }, 400);
+                        }
+                    });
+                });
+                renderCerts();
+
+
+            const audio = document.getElementById('bg-audio');
+            const musicBtn = document.getElementById('music-toggle-btn');
+
+            if (audio && musicBtn) {
+
+                audio.volume = 0.4;
+
+                let isPlaying = false;
+
+                // Fungsi untuk memutar musik
+                const playMusic = () => {
+                    audio.play().then(() => {
+                        isPlaying = true;
+                        musicBtn.classList.add('playing');
+                    }).catch(err => {
+
+                        console.log("Autoplay dicegah oleh browser, menunggu interaksi klik pertama.");
+                    });
+                };
+
+                
+                playMusic();
+
+                const handleFirstInteraction = () => {
+                    if (!isPlaying) {
+                        playMusic();
+                    }
+                    window.removeEventListener('click', handleFirstInteraction);
+                    window.removeEventListener('scroll', handleFirstInteraction);
+                };
+                window.addEventListener('click', handleFirstInteraction);
+                window.addEventListener('scroll', handleFirstInteraction);
+
+                
+                musicBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    if (isPlaying) {
+                        audio.pause();
+                        isPlaying = false;
+                        musicBtn.classList.remove('playing');
+                        musicBtn.classList.add('muted');
+                    } else {
+                        audio.play();
+                        isPlaying = true;
+                        musicBtn.classList.remove('muted');
+                        musicBtn.classList.add('playing');
+                    }
+                });
+            }
+            }
+        });
+    </script>
+</body>
+</html>
