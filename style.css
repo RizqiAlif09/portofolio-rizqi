@@ -313,7 +313,7 @@ h1, h2, h3, .name-logo {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .about-left, .about-right {
@@ -747,7 +747,7 @@ h1, h2, h3, .name-logo {
 
 @media (max-width: 400px) {
     .stroke-text-svg {
-        font-size: 20vw !important;
+        font-size: 30vw !important;
         letter-spacing: 2px;
     }
     
