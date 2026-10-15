@@ -55,6 +55,8 @@ h1, h2, h3, .name-logo {
     text-align: center;
     min-height: 100vh;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .stroke-text-wrapper {
@@ -62,13 +64,13 @@ h1, h2, h3, .name-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 10px;
     cursor: pointer;
 }
 
 .stroke-text-svg {
     width: 100%;
-    max-width: 900px;
+    max-width: 950px;
     height: auto;
     font-family: 'Playfair Display', serif;
     font-size: 110px;
@@ -221,7 +223,7 @@ h1, h2, h3, .name-logo {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 40px; 
+    bottom: 50px; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -695,6 +697,20 @@ h1, h2, h3, .name-logo {
         min-height: 100vh;
     }
 
+    .hero-page {
+        justify-content: center;
+        padding-top: 0;
+    }
+
+    .stroke-text-svg {
+        font-size: 11vw !important;
+        letter-spacing: 2px;
+    }
+
+    .scroll-indicator {
+        bottom: 25px;
+    }
+
     .about-container, .work-container, .project-container, .org-container { 
         flex-direction: column; 
         gap: 25px;
@@ -711,11 +727,6 @@ h1, h2, h3, .name-logo {
     .infinite-spiral__item {
         width: 130px;
         height: 162px;
-    }
-
-    .stroke-text-svg {
-        font-size: 65px !important;
-        letter-spacing: 5px;
     }
 
     .card-swap {
@@ -742,8 +753,8 @@ h1, h2, h3, .name-logo {
 
 @media (max-width: 400px) {
     .stroke-text-svg {
-        font-size: 52px !important;
-        letter-spacing: 3px;
+        font-size: 10.5vw !important;
+        letter-spacing: 1px;
     }
     
     .card-swap {
