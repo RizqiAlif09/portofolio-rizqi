@@ -12,6 +12,52 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #050505;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.welcome-content {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.welcome-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.enter-btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.enter-btn:hover {
+    background: #ffffff;
+    color: #050505;
+    transform: scale(1.05);
+}
+
 h1, h2, h3, .name-logo {
     font-family: 'Playfair Display', serif;
 }
@@ -454,9 +500,13 @@ h1, h2, h3, .name-logo {
 .work-container, .project-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 60px;
+}
+
+.project-container.reverse-layout {
+    flex-direction: row-reverse;
 }
 
 .work-image, .project-image {
@@ -754,8 +804,16 @@ h1, h2, h3, .name-logo {
         width: 100%;
     }
 
+    .project-container.reverse-layout {
+        flex-direction: column;
+    }
+
     .org-container {
         flex-direction: column-reverse; 
+    }
+
+    .welcome-content h2 {
+        font-size: 1.5rem;
     }
 
     .infinite-spiral {

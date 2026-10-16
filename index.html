@@ -10,6 +10,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div id="welcome-overlay" class="welcome-overlay">
+        <div class="welcome-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p style="color: #aaaaaa; font-size: 0.9rem; margin-top: 10px;">For the best experience, please turn on your sound.</p>
+            <button id="enter-btn" class="enter-btn">Enter Portfolio</button>
+        </div>
+    </div>
 
     <header class="top-header" data-aos="fade-down" data-aos-duration="1200">
         <div class="header-left">
@@ -164,8 +171,9 @@
     <section class="page project-page" id="project">
         <div data-aos="fade-up">
             <h3 class="section-title center">My Project</h3>
-            <p class="work-year center">2026</p>
+            <p class="work-year center">2024 - 2026</p>
         </div>
+    
         <div class="container project-container">
             <div class="project-image" data-aos="zoom-in" data-aos-duration="1200">
                 <a href="https://cengkarengassalamaqiqah.com/" target="_blank">
@@ -177,6 +185,36 @@
                 <h4>Website Katering</h4>
                 <p style="margin-left: 20px; text-align: justify; line-height: 1.8;">
                     Developed a responsive web platform for a catering and aqiqah business in Cengkareng, built using React.js. The website is specifically designed to establish a strong digital presence, helping local customers easily discover and explore various catering service packages. To provide a seamless and personalized customer experience, the intuitive user interface is optimized to direct all inquiries and orders straight to the business's WhatsApp contact.
+                </p>
+            </div>
+        </div>
+
+        <div class="container project-container reverse-layout">
+            <div class="project-image" data-aos="zoom-in" data-aos-duration="1200">
+                <a href="https://kikolai123.pythonanywhere.com/" target="_blank">
+                    <img src="assets/foto-project2.jpg" alt="Heart Disease Project">
+                    <div class="hover-text">Click to Visit</div>
+                </a>
+            </div>
+            <div class="project-desc" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <h4>Website Heart Disease</h4>
+                <p style="margin-right: 20px; text-align: justify; line-height: 1.8;">
+                    Developed a full stack web application for the HEAL M heart disease early detection platform, utilizing Flask and Bootstrap to deliver an interactive diagnostic dashboard. The system processes clinical parameters such as patient age, cholesterol levels, and electrocardiogram results through a serialized machine learning model to evaluate cardiovascular anomaly probabilities.
+                </p>
+            </div>
+        </div>
+
+        <div class="container project-container">
+            <div class="project-image" data-aos="zoom-in" data-aos-duration="1200">
+                <a href="https://landmark-lens-rizqi.vercel.app/" target="_blank">
+                    <img src="assets/foto-project3.jpg" alt="Landmark Lens Project">
+                    <div class="hover-text">Click to Visit</div>
+                </a>
+            </div>
+            <div class="project-desc" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <h4>Website Landmark Lens</h4>
+                <p style="margin-left: 20px; text-align: justify; line-height: 1.8;">
+                    Developed a responsive, AI-driven web application named Landmark Lens, built using TSX. The platform is specifically designed to process and identify user-uploaded photos of landmarks by leveraging the Google Gemini API. To provide an immersive and accessible user experience, the intuitive interface automatically translates visual data into detailed textual explanations and generates natural-sounding audio narrations across multiple languages.
                 </p>
             </div>
         </div>
@@ -356,53 +394,63 @@
                 renderCerts();
             }
 
+            // PENGATURAN AUDIO & WELCOME SCREEN
             const audio = document.getElementById('bg-audio');
             const musicBtn = document.getElementById('music-toggle-btn');
+            const welcomeOverlay = document.getElementById('welcome-overlay');
+            const enterBtn = document.getElementById('enter-btn');
 
             if (audio && musicBtn) {
-                audio.volume = 1; 
+                audio.volume = 1.0; 
                 let isPlaying = false;
 
-                const playAudio = () => {
-                    audio.play().then(() => {
-                        isPlaying = true;
+                const updateButtonState = (playing) => {
+                    isPlaying = playing;
+                    if (playing) {
                         musicBtn.classList.remove('muted');
                         musicBtn.classList.add('playing');
-                    }).catch(err => {
-                        console.log("Autoplay blocked, waiting for interaction");
-                    });
-                };
-
-                playAudio();
-
-                const unlockAudio = () => {
-                    if (!isPlaying) {
-                        playAudio();
-                    }
-                    window.removeEventListener('click', unlockAudio);
-                    window.removeEventListener('scroll', unlockAudio);
-                    window.removeEventListener('touchstart', unlockAudio);
-                };
-
-                window.addEventListener('click', unlockAudio);
-                window.addEventListener('scroll', unlockAudio);
-                window.addEventListener('touchstart', unlockAudio);
-
-                musicBtn.addEventListener('click', (e) => {
-                    e.stopPropagation(); 
-                    if (isPlaying) {
-                        audio.pause();
-                        isPlaying = false;
+                    } else {
                         musicBtn.classList.remove('playing');
                         musicBtn.classList.add('muted');
-                    } else {
+                    }
+                };
+
+                // Cek apakah browser diam-diam mengizinkan autoplay
+                audio.play().then(() => {
+                    updateButtonState(true);
+                    // Jika diizinkan tanpa klik, langsung hilangkan layar Welcome
+                    if (welcomeOverlay) {
+                        welcomeOverlay.style.display = 'none';
+                    }
+                }).catch(() => {
+                    console.log("Autoplay diblokir browser. Menunggu klik Enter.");
+                });
+
+                // Aksi saat tombol Enter Portfolio diklik
+                if (enterBtn && welcomeOverlay) {
+                    enterBtn.addEventListener('click', () => {
+                        // Hilangkan layar Welcome dengan animasi halus
+                        welcomeOverlay.style.opacity = '0';
+                        setTimeout(() => {
+                            welcomeOverlay.style.visibility = 'hidden';
+                        }, 800);
+                        
+                        // Putar musik (100% pasti berhasil karena dipicu oleh klik)
                         audio.play().then(() => {
-                            isPlaying = true;
-                            musicBtn.classList.remove('muted');
-                            musicBtn.classList.add('playing');
-                        }).catch(err => {
-                            console.log("Audio play error:", err);
-                        });
+                            updateButtonState(true);
+                        }).catch(err => console.log(err));
+                    });
+                }
+
+                // Aksi untuk tombol musik di pojok kiri atas
+                musicBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (isPlaying) {
+                        audio.pause();
+                        updateButtonState(false);
+                    } else {
+                        audio.play();
+                        updateButtonState(true);
                     }
                 });
             }
