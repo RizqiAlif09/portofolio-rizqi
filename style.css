@@ -12,30 +12,6 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-.welcome-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #050505;
-    z-index: 999999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-}
-
-.welcome-content {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Playfair Display', serif;
-}
-
-.welcome-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-}
 
 .enter-btn {
     margin-top: 30px;
@@ -810,10 +786,6 @@ h1, h2, h3, .name-logo {
 
     .org-container {
         flex-direction: column-reverse; 
-    }
-
-    .welcome-content h2 {
-        font-size: 1.5rem;
     }
 
     .infinite-spiral {
